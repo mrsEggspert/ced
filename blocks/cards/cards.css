@@ -8,8 +8,8 @@
 }
 
 .cards > ul > li {
-  border: 1px solid var(--dark-color);
-  background-color: var(--background-color)
+  border: 1px solid var(--eggs-grey);
+  background-color: white
 }
 
 .cards .cards-card-body {

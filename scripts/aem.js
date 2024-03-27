@@ -361,7 +361,7 @@ function decorateTemplateAndTheme() {
  */
 function decorateButtons(element) {
   element.querySelectorAll('a').forEach((a) => {
-    a.title = a.title || a.textContent;
+    a.title = a.title.trim() || a.textContent.trim()|| 'EGGSpertise für EGGSzellente Lösungen';
     if (a.href !== a.textContent) {
       const up = a.parentElement;
       const twoup = a.parentElement.parentElement;
@@ -640,6 +640,7 @@ function decorateBlocks(main) {
  */
 async function loadHeader(header) {
   const headerBlock = buildBlock('header', '');
+  header.classList.add('eggs-header')
   header.append(headerBlock);
   decorateBlock(headerBlock);
   return loadBlock(headerBlock);
