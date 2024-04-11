@@ -93,19 +93,14 @@ main pre {
   white-space: pre;
 }
 
-/* links */
+/* 🥂 links 🥂 */
 a:any-link {
-  color: deeppink;
+  color: #504f4f;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-  color: var(--eggs-yellow);
-}
-
-/* buttons */
-a.button:any-link, button {
+/* 🥂 buttons 🥂 */
+a.button:any-link, button, .eggsteaser a {
   font-family: var(--mrs-eggs-font);
   display: inline-block;
   box-sizing: border-box;
@@ -123,7 +118,7 @@ a.button:any-link, button {
   border-radius: 30px;
   transition: all .3s;
 }
-.button:hover {
+.button:hover, .eggsteaser a:hover {
   transform: scale(1.2);
 }
 
