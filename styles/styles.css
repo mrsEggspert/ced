@@ -2,7 +2,7 @@
   /* colors */
   --text-color: #5e5e5e;
   --eggs-yellow: #ffcc02;
-  --eggs-grey: #b2b4b5;
+  --eggs-grey: #747474;
   --eggspanse: 2rem;
 
   --mrs-eggs-font: mrseggs, helvetica;
@@ -46,6 +46,24 @@ body {
   color: var(--text-color);
   text-rendering: optimizelegibility;
 }
+
+/* I 💛 MOBILE FIRST */
+@media only screen and (max-width: 1200px) {
+  main >div:not(.hero-container){
+    display: none;
+  }
+
+  main::after {
+    display: block;
+    width: 80%;
+    margin: 3rem auto;
+    content: " SAUEREI!!!! Der faule Entwickler hat die mobile Ansicht für die Demo weggelassen. 😇";
+  }
+}
+
+
+
+/* I 💛 DESKTOP STYLING  */
 
 body.appear {
   display: block;
