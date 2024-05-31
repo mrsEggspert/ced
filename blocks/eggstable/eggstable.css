@@ -1,0 +1,74 @@
+.eggstable {
+    margin: auto;
+}
+
+.eggstable-wrapper {
+    background: #ffca00ab;
+    padding: 4rem 0 2rem;
+    margin-top: 5rem;
+}
+
+.speakers-block {
+    position: relative;
+}
+
+
+
+.cmp-speaker-select {
+  position: relative;
+  border: 1px solid lightgrey;
+  background: white;
+  width: 18.8rem;
+  border-radius: .2rem;
+    margin: auto
+}
+.cmp-speaker-select select {
+    font-family: var(--mrs-eggs-font);
+    font-size: 1.7rem;
+    padding: 1.2rem 1rem 1.2rem 1.4rem;
+    border: none;
+    background-color: transparent;
+}
+
+.cmp-speaker-select select:active,
+.cmp-speaker-select select:focus {
+     outline: none;
+     box-shadow: none;
+}
+
+.cmp-speaker-head {
+    position: absolute;
+    color: white;
+    font-size: 13rem;
+    margin-top: -8.5rem;
+    font-family: var(--eggstreme-font);
+}
+
+
+/*table*/
+
+.eggstable table {
+    width: 750px;
+    border-collapse: collapse;
+    margin:5rem auto;
+    margin-top: 20px;
+    background: white;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+th {
+    background: #ffae00;
+    color: white;
+    font-weight: bold;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-size: 18px;
+}

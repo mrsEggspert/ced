@@ -1,0 +1,44 @@
+.eggsteaser {
+  margin-left: var(--eggspanse);
+  margin-right: var(--eggspanse);
+  margin-top: 3rem;
+}
+
+.eggsteaser h2 {
+  margin-top: 0;
+  color: var(--eggs-yellow);
+}
+
+.eggsteaser > div {
+  display: flex;
+}
+
+.eggsteaser a {
+  margin-top: 5rem;
+}
+
+.eggsteaser em {
+  font-size: 4.3rem;
+  margin-bottom: 3rem;
+  display: block;
+}
+
+.eggsteaser-seperator {
+  background-image: url(/icons/vogerl.png);
+  height: 13rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 4.5rem;
+  position: relative;
+  background-position-y: 0;
+}
+
+.eggsteaser-seperator:after {
+  content: '';
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  width: .2rem;
+  height: 7rem;
+  background-color: #919191;
+}

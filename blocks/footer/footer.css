@@ -1,14 +1,45 @@
-footer {
-  padding: 2rem;
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-s);
+.eggs-footer {
+  background: var(--eggs-grey);
+  color: white;
+  padding: 2rem 0;
+  margin-top: 5rem;
 }
 
-footer .footer {
-  max-width: 1200px;
-  margin: auto;
+/*EGGSemplarische Links*/
+.eggs-footer p:nth-child(2),
+.eggs-footer p:nth-child(2) a {
+  color: white;
 }
 
-footer .footer p {
-  margin: 0;
+.eggs-footer p:nth-child(2) {
+  margin-top:2.5rem;
+  font-size: 1rem;
 }
+
+.eggs-footer p:nth-child(2) a {
+  font-size: 2rem;
+  margin-left: .8rem;
+  margin-right: .8rem;
+  position: relative;
+}
+
+.eggs-footer p:nth-child(2) a:before {
+  position: absolute;
+  content: "______";
+  left: 0;
+  bottom: -0.4rem;
+  width: 0;
+  text-decoration: underline solid 0.1rem white;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  transition: width 0.36s ease-in-out, clip-path 0.36s ease-in-out;
+}
+
+.eggs-footer p:nth-child(2) a:hover {
+  text-decoration: none;
+}
+
+.eggs-footer p:nth-child(2) a:hover::before {
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+

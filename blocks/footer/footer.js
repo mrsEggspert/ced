@@ -18,4 +18,5 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   block.append(footer);
+  block.parentElement.classList.add('eggs-footer');
 }

@@ -1,0 +1,40 @@
+.eggsquote > div {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.eggsquote-wrapper {
+  text-align: center;
+  width: 100rem;
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.eggsquote img {
+  border-radius: 50%;
+  width: 25rem;
+  height: 25rem;
+}
+
+.eggsquote em {
+  font-size: 4.3rem;
+  margin-bottom: 3rem;
+  display: block;
+}
+
+.eggsquote h2 {
+  margin-top: 1rem;
+  color: var(--eggs-yellow);
+}
+
+.eggsquote a {
+  text-decoration: underline;
+  margin-top: 2rem;
+  margin-top: 1rem;
+  display: block;
+}
+
+.eggsquote a:hover {
+  color: var(--eggs-yellow);
+}
