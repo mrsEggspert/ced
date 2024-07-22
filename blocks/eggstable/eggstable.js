@@ -1,33 +1,27 @@
-async function createSpeakersHeader(table) {
+async function createmeetupsHeader(table) {
   let tr = document.createElement('tr');
   let sno = document.createElement('th');
-  sno.appendChild(document.createTextNode('Nummer'));
-  let speakerName = document.createElement('th');
-  speakerName.appendChild(document.createTextNode('Name'));
+  sno.appendChild(document.createTextNode('Number'));
+  let meetupName = document.createElement('th');
+  meetupName.appendChild(document.createTextNode('Service Category'));
   let timeSlot = document.createElement('th');
-  timeSlot.appendChild(document.createTextNode('Uhrzeit'));
-  let capital = document.createElement('th');
-  capital.appendChild(document.createTextNode('Thema'));
+  timeSlot.appendChild(document.createTextNode('Description'));
   tr.append(sno);
-  tr.append(speakerName);
-  tr.append(capital);
+  tr.append(meetupName);
   tr.append(timeSlot);
   table.append(tr);
 }
-async function createSpeakersRow(table, row, i) {
+async function createmeetupsRow(table, row, i) {
   let tr = document.createElement('tr');
   let sno = document.createElement('td');
   sno.appendChild(document.createTextNode(i));
-  let speakerName = document.createElement('td');
-  speakerName.appendChild(document.createTextNode(row.Name));
+  let meetupName = document.createElement('td');
+  meetupName.appendChild(document.createTextNode(row.Service));
   let timeSlot = document.createElement('td');
-  timeSlot.appendChild(document.createTextNode(row.Thema));
-  let capital = document.createElement('td');
-  capital.appendChild(document.createTextNode(row.Uhrzeit));
+  timeSlot.appendChild(document.createTextNode(row.Description));
   tr.append(sno);
-  tr.append(speakerName);
+  tr.append(meetupName);
   tr.append(timeSlot);
-  tr.append(capital);
   table.append(tr);
 }
 
@@ -36,12 +30,12 @@ async function lebakasSemme(jsonURL) {
   const { pathname } = new URL(jsonURL);
 
   const resp = await fetch(pathname);
-  optionsMap.set('all', '🗯️ Alle CXD Speakers');
+  optionsMap.set('all', '🗯️ Alle CXD meetups');
   optionsMap.set('eggsperts', '💛 EGGSperten');
   optionsMap.set('eggsternal', '⭐️ EGGSternal');
   const select = document.createElement('select');
-  select.id = 'filterSpeakers';
-  select.name = 'speakerName';
+  select.id = 'filtermeetups';
+  select.name = 'meetupName';
   select.ariaLabel = 'EGGStraterrestrial Auswahl';
   optionsMap.forEach((val, key) => {
     const option = document.createElement('option');
@@ -51,13 +45,13 @@ async function lebakasSemme(jsonURL) {
   });
 
   const div = document.createElement('div');
-  div.classList.add('cmp-speaker-select');
+  div.classList.add('cmp-meetup-select');
 
   div.append(select);
   return div;
 }
 
-async function createSpeakers(jsonURL, val) {
+async function createmeetups(jsonURL, val) {
   let pathname = null;
   if (val) {
     pathname = jsonURL;
@@ -69,37 +63,37 @@ async function createSpeakers(jsonURL, val) {
   const json = await resp.json();
 
   const table = document.createElement('table');
-  createSpeakersHeader(table);
+  createmeetupsHeader(table);
   json.data.forEach((row, i) => {
-    createSpeakersRow(table, row, i + 1);
+    createmeetupsRow(table, row, i + 1);
   });
 
   return table;
 }
 
 export default async function decorate(block) {
-  const speakers = block.querySelector('a[href$=".json"]');
+  const meetups = block.querySelector('a[href$=".json"]');
   const parientDiv = document.createElement('div');
-  parientDiv.classList.add('speakers-block');
+  parientDiv.classList.add('meetups-block');
 
   const h2 = document.createElement('h2');
-  h2.innerText = 'Speakers';
-  h2.classList.add('cmp-speaker-head');
+  h2.innerText = 'eggs🤍meetup';
+  h2.classList.add('cmp-meetup-head');
 
-  if (speakers) {
+  if (meetups) {
     parientDiv.append(h2);
-    parientDiv.append(await lebakasSemme(speakers.href));
-    parientDiv.append(await createSpeakers(speakers.href, null));
-    speakers.replaceWith(parientDiv);
+   //  parientDiv.append(await lebakasSemme(meetups.href));
+    parientDiv.append(await createmeetups(meetups.href, null));
+    meetups.replaceWith(parientDiv);
   }
-  const dropdown = document.getElementById('filterSpeakers');
+  const dropdown = document.getElementById('filtermeetups');
   dropdown.addEventListener('change', () => {
-    let url = speakers.href;
+    let url = meetups.href;
     if (dropdown.value != 'all') {
-      url = speakers.href + '?sheet=' + dropdown.value;
+      url = meetups.href + '?sheet=' + dropdown.value;
     }
     const tableE = parientDiv.querySelector(':scope > table');
-    let promise = Promise.resolve(createSpeakers(url, dropdown.value));
+    let promise = Promise.resolve(createmeetups(url, dropdown.value));
     promise.then(function (val) {
       tableE.replaceWith(val);
     });

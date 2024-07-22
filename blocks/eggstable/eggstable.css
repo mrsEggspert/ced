@@ -8,13 +8,12 @@
     margin-top: 5rem;
 }
 
-.speakers-block {
+.meetup-block {
     position: relative;
 }
 
 
-
-.cmp-speaker-select {
+.cmp-meetup-select {
   position: relative;
   border: 1px solid lightgrey;
   background: white;
@@ -22,7 +21,7 @@
   border-radius: .2rem;
     margin: auto
 }
-.cmp-speaker-select select {
+.cmp-meetup-select select {
     font-family: var(--mrs-eggs-font);
     font-size: 1.7rem;
     padding: 1.2rem 1rem 1.2rem 1.4rem;
@@ -30,17 +29,18 @@
     background-color: transparent;
 }
 
-.cmp-speaker-select select:active,
-.cmp-speaker-select select:focus {
+.cmp-meetup-select select:active,
+.cmp-meetup-select select:focus {
      outline: none;
      box-shadow: none;
 }
 
-.cmp-speaker-head {
+.cmp-meetup-head {
     position: absolute;
     color: white;
     font-size: 13rem;
-    margin-top: -8.5rem;
+    margin-top: -15.5rem;
+    margin-left: 2rem;
     font-family: var(--eggstreme-font);
 }
 
@@ -48,11 +48,12 @@
 /*table*/
 
 .eggstable table {
-    width: 750px;
     border-collapse: collapse;
     margin:5rem auto;
-    margin-top: 20px;
+    margin-top: 7rem;
     background: white;
+    width: 69.3rem;
+    display: block;
 }
 
 /* Zebra striping */
