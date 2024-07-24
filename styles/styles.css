@@ -217,6 +217,21 @@ main .section.highlight {
 }
 
 .eggs-intro em{
-  padding: 2rem 0 1.5rem;
+ // padding: 2rem 0 1.5rem;
   display: block;
+  color: #ffb700;
+ // border-top: solid 2px #ffb700;
+  margin-top: -1px;
+  padding: 26px;
+  width: 40rem;
+  margin: auto;
+  /*margin-top: 2rem;*/
 }
+
+.eggs-intro .default-content-wrapper {
+  width: 65rem;
+  margin: auto;
+  position: relative;
+}
+
+
